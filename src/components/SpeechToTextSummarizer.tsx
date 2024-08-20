@@ -2,12 +2,7 @@ import React, { useState, useEffect } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
-import OpenAI from "openai";
 import "./SpeechToTextSummarizer.css";
-
-const openai = new OpenAI({
-  apiKey: "API KEY",
-});
 
 const SpeechToTextSummarizer: React.FC = () => {
   const [summary, setSummary] = useState<string>("");
@@ -40,15 +35,33 @@ const SpeechToTextSummarizer: React.FC = () => {
     setLoading(true);
     setError(null);
 
+    const apiUrl = "https://api.openai.com/v1/chat/completions";
+    const apiKey = "YOUR_API_KEY"; // Replace with your actual API key
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    };
+
+    const data = {
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content: "You are a helpful assistant. Summarize the provided text.",
+        },
+        { role: "user", content: transcript },
+      ],
+    };
+
     try {
-      const response = await openai.completions.create({
-        model: "whisper-1",
-        prompt: `Summarize this: ${transcript}`,
-        max_tokens: 100,
-        temperature: 0.7,
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers,
+        body: JSON.stringify(data),
       });
 
-      setSummary(response.choices[0].text.trim());
+      const result = await response.json();
+      setSummary(result.choices[0].message.content.trim());
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unknown error occurred"
