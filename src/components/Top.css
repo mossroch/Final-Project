@@ -1,0 +1,59 @@
+
+
+.patient-notes-container {
+  font-family: "Georgia", serif;
+  color: hsl(var(--txt));
+  background-color: hsl(var(--bg));
+  padding: 20px;
+  text-align: center;
+}
+
+.patient-notes-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: hsl(var(--accent));
+  margin: 0;
+}
+
+.patient-notes-header nav ul li {
+  margin: 0 10px;
+  cursor: pointer;
+  color: hsl(var(--txt));
+}
+
+.patient-notes-header .login-link {
+  margin-left: auto;
+  cursor: pointer;
+  color: hsl(var(--accent));
+}
+
+.patient-notes-content h2 {
+  font-size: 36px;
+  margin: 20px 0;
+  font-weight: bold;
+  color: hsl(var(--txt));
+}
+
+.patient-notes-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: hsl(var(--txt));
+}
+
+.trial-button {
+  background-color: hsl(var(--accent1));
+  color: hsl(var(--bg));
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition-duration: 300ms;
+}
+
+.trial-button:hover {
+  background-color: hsl(var(--accent1) / 0.8);
+}
+

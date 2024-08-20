@@ -1,0 +1,66 @@
+.compliance-section {
+  text-align: center;
+  padding: 2rem;
+  background-color: hsl(var(--bg));
+}
+
+.compliance-section-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: hsl(var(--txt));
+}
+
+.compliance-section-subtitle {
+  font-size: 1.2rem;
+  color: hsl(var(--txt));
+  margin-bottom: 2rem;
+}
+
+.compliance-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.compliance-card {
+  background-color: hsl(var(--bg));
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  width: 300px;
+  margin: 1rem;
+}
+
+.compliance-card-image {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+.compliance-card-title {
+  font-size: 1.4rem;
+  color: hsl(var(--accent));
+  margin-bottom: 0.5rem;
+}
+
+.compliance-card-description {
+  font-size: 1rem;
+  color: hsl(var(--txt));
+  margin-bottom: 1rem;
+}
+
+.compliance-card-button {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--txt));
+  padding: 0.5rem 2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.compliance-card-button:hover {
+  background-color: hsl(var(--accent1) / 0.8);
+}

@@ -1,0 +1,31 @@
+.testimonial-quote {
+  font-size: 16px;
+  line-height: 1.5;
+  color: hsl(var(--txt));
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.author-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0;
+}
+
+.author-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: hsl(var(--txt));
+  margin: 0;
+}
+
+.author-designation {
+  font-size: 12px;
+  color: hsl(var(--muted));
+  margin: 0;
+}
